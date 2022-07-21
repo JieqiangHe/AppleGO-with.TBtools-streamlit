@@ -27,7 +27,7 @@ with header:
     # 🍎 APPLE GO (TBtools.) 
     ###### *Description: Using TBtools cmd to do Gene Ontology analysis with Apple id or TAIR ID.*
     """)
-    species = st.multiselect("Select One Specie:", ["Arabidopsis", "Apple"],default=["Arabidopsis"])
+    species = st.multiselect("Select One Specie:", ["Arabidopsis", "Apple"],default=["Apple"])
     if species == []:
         st.error("Please select one specie. You didn't select any specie.")
     elif species == ["Arabidopsis"]:
