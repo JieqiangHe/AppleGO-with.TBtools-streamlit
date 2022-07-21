@@ -49,8 +49,8 @@ with header:
     cmd = 'java -cp ' + ' TBtools_JRE1.6.jar ' + ' biocjava.bioIO.GeneOntology.EnrichMent.GOTermEnrichment ' + ' --oboFile ' + gobasic + ' --gene2GoFile ' + path + ' --selectionSetFiles ' + 'tempID.txt'
     if st.button("Run"):
         st.warning("Please wait for a while. This analysis may take a while.")
-        os.system(cmd)
-        if cmd == 0:
+        run = os.system(cmd)
+        if run == 0:
             st.success("Successfully run TBtools GO enrichment!")
         else:
             st.error("Failed to run TBtools GO enrichment! Check your ID")
