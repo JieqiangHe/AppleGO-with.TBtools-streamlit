@@ -8,17 +8,17 @@ import streamlit as st
 import altair as alt
 import pandas as pd
 
-#install java
-import jdk
-HOME = os.path.expanduser('~')
-if os.path.exists(HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java") == False:
-    jdk.install('11')
-    print(jdk.OS)
-    javatb = HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java"
-    print (javatb)
-else:
-    javatb = HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java"
-    print("java is already installed")
+##install java
+#import jdk
+#HOME = os.path.expanduser('~')
+#if os.path.exists(HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java") == False:
+#    jdk.install('11')
+#    print(jdk.OS)
+#    javatb = HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java"
+#    print (javatb)
+#else:
+#    javatb = HOME + "/.jdk/jdk-11.0.15+10/Contents/Home/bin/java"
+#    print("java is already installed")
 
 header = st.container()
 
@@ -46,7 +46,7 @@ with header:
         IDfile.write(i + '\n')
     IDfile.close()
     gobasic = 'data/go-basic.obo'
-    cmd = javatb + ' -cp ' + ' TBtools_JRE1.6.jar ' + ' biocjava.bioIO.GeneOntology.EnrichMent.GOTermEnrichment ' + ' --oboFile ' + gobasic + ' --gene2GoFile ' + path + ' --selectionSetFiles ' + 'tempID.txt'
+    cmd = 'java -cp ' + ' TBtools_JRE1.6.jar ' + ' biocjava.bioIO.GeneOntology.EnrichMent.GOTermEnrichment ' + ' --oboFile ' + gobasic + ' --gene2GoFile ' + path + ' --selectionSetFiles ' + 'tempID.txt'
     if st.button("Run"):
         st.warning("Please wait for a while. This analysis may take a while.")
         os.system(cmd)
